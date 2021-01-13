@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<label for="Year"> Enter age in year:</label>
+<input type="number" id="year"><br><br>
+<label for="Months"> Enter age in months:</label>
+<input type="number" id="months" min="0" max="12"><br><br>
+<button type="button" onclick="myFunction()">Calculate Dog
+Year</button>
+<p id = "dog"></p>
+
+<script>
+function myFunction() {
+var Year = document.getElementById("year").value;
+var Months = document.getElementById("months").value;
+
+if(Year<=2 & Months>=0){
+var months = Months*10.5;
+var DogYear = Year*10.5*12;
+var humanAgeInDogYear = ((DogYear+ months)/12);
+var x = Math.floor(humanAgeInDogYear);
+console.log(x);
+var y = (humanAgeInDogYear - x)*12;
+document.getElementById("dog").innerHTML = "Your age in dog year is"+ " " +x + "years and" + " "+y + " " +"months";
+}
+
+else{
+var temp=21;
+var months = Months*4;
+var DogYear = (Year-2)*4*12;
+
+var humanAgeInDogYear = ((DogYear + months)/12);
+
+var x = Math.floor(humanAgeInDogYear) + temp;
+var y = (humanAgeInDogYear- Math.floor(humanAgeInDogYear))*12;
+document.getElementById("dog").innerHTML = "Your age in dog year is"+ " " +x + "years and" + " "+y + " " +"months";
+}
+}
+</script>
+</body>
+</html>
